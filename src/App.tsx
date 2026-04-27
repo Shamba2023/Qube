@@ -225,10 +225,38 @@ export default function App() {
       case 'workflow':
         return (
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-corporate-navy tracking-tight">Period End Workflows</h2>
-              <p className="text-sm text-slate-500 mt-1">Managing all critical steps for the {closeType.toLowerCase()} accounting cycle.</p>
-            </div>
+             <div className="flex justify-between items-start mb-6">
+               <div>
+                <h2 className="text-2xl font-bold text-corporate-navy tracking-tight">Period End Workflows</h2>
+                <p className="text-sm text-slate-500 mt-1">Managing all critical steps for the {closeType.toLowerCase()} accounting cycle.</p>
+               </div>
+               <div className="hidden sm:flex items-center gap-4 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                 <div className="text-right">
+                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Overall Status</p>
+                   <p className="text-lg font-black text-corporate-navy leading-none">72%</p>
+                 </div>
+                 <div className="relative w-12 h-12">
+                   <svg className="w-12 h-12 transform -rotate-90">
+                     <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="4" fill="transparent" className="text-slate-100" />
+                     <circle 
+                        cx="24" cy="24" r="20" 
+                        stroke="currentColor" 
+                        strokeWidth="4" 
+                        fill="transparent" 
+                        strokeDasharray={125.6} 
+                        strokeDashoffset={125.6 * (1 - 0.72)} 
+                        className="text-corporate-navy transition-all duration-1000 ease-out" 
+                        strokeLinecap="round"
+                    />
+                   </svg>
+                   <div className="absolute inset-0 flex items-center justify-center">
+                     <div className="flex flex-col items-center">
+                        <span className="text-[9px] font-black text-corporate-navy">72%</span>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
             <FiltersBar />
             <TaskList tasks={MOCK_TASKS} />
           </motion.div>
@@ -283,9 +311,37 @@ export default function App() {
       case 'group-reporting-workflow':
         return (
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-corporate-navy tracking-tight">GR Workflows</h2>
-              <p className="text-sm text-slate-500 mt-1">Sequential steps and progress monitoring for group-level reporting cycle.</p>
+            <div className="flex justify-between items-start mb-6">
+              <div>
+                <h2 className="text-2xl font-bold text-corporate-navy tracking-tight">GR Workflows</h2>
+                <p className="text-sm text-slate-500 mt-1">Sequential steps and progress monitoring for group-level reporting cycle.</p>
+              </div>
+              <div className="hidden sm:flex items-center gap-4 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div className="text-right">
+                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Overall Status</p>
+                  <p className="text-lg font-black text-corporate-navy leading-none">45%</p>
+                </div>
+                <div className="relative w-12 h-12">
+                  <svg className="w-12 h-12 transform -rotate-90">
+                    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="4" fill="transparent" className="text-slate-100" />
+                    <circle 
+                      cx="24" cy="24" r="20" 
+                      stroke="currentColor" 
+                      strokeWidth="4" 
+                      fill="transparent" 
+                      strokeDasharray={125.6} 
+                      strokeDashoffset={125.6 * (1 - 0.45)} 
+                      className="text-corporate-navy transition-all duration-1000 ease-out" 
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="flex flex-col items-center">
+                      <span className="text-[9px] font-black text-corporate-navy">45%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <FiltersBar />
