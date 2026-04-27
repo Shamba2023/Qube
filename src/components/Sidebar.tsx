@@ -24,7 +24,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   ];
 
   return (
-    <aside className="w-64 bg-slate-900 text-slate-300 flex flex-col border-r border-slate-800">
+    <aside className="w-64 bg-slate-900 text-slate-100 flex flex-col border-r border-slate-800">
       <div className="p-6 flex items-center gap-3">
         <Box className="text-corporate-accent" size={32} strokeWidth={2.5} />
         <div className="flex flex-col">
@@ -34,7 +34,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
       </div>
 
       <nav className="flex-1 px-3 py-6 space-y-1 overflow-y-auto">
-        <div className="text-[10px] text-slate-600 uppercase font-black tracking-widest mb-4 px-3">Management Steps</div>
+        <div className="text-[10px] text-slate-400 uppercase font-black tracking-widest mb-4 px-3">Management Steps</div>
         {managementTabs.map((tab) => {
           const Icon = tab.icon;
           return (
@@ -45,16 +45,16 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
                 "w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-semibold transition-all group",
                 activeTab === tab.id 
                   ? "bg-corporate-accent text-slate-900 shadow-md shadow-yellow-500/10" 
-                  : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                  : "text-slate-300 hover:text-white hover:bg-slate-800/50"
               )}
             >
-              <Icon size={16} className={cn("transition-transform group-hover:scale-110", activeTab === tab.id ? "text-slate-900" : "text-slate-500")} />
+              <Icon size={16} className={cn("transition-transform group-hover:scale-110", activeTab === tab.id ? "text-slate-900" : "text-slate-400")} />
               {tab.label}
             </button>
           );
         })}
 
-        <div className="pt-10 text-[10px] text-slate-600 uppercase font-black tracking-widest mb-4 px-3">Workflows</div>
+        <div className="pt-10 text-[10px] text-slate-400 uppercase font-black tracking-widest mb-4 px-3">Critical Workflows</div>
         {workflowTabs.map((tab) => {
           const Icon = tab.icon;
           return (
@@ -65,30 +65,30 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
                 "w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-semibold transition-all group",
                 activeTab === tab.id 
                   ? "bg-corporate-accent text-slate-900 shadow-md shadow-yellow-500/10" 
-                  : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+                  : "text-slate-300 hover:text-white hover:bg-slate-800/50"
               )}
             >
-              <Icon size={16} className={cn("transition-transform group-hover:scale-110", activeTab === tab.id ? "text-slate-900" : "text-slate-500")} />
+              <Icon size={16} className={cn("transition-transform group-hover:scale-110", activeTab === tab.id ? "text-slate-900" : "text-slate-400")} />
               {tab.label}
             </button>
           );
         })}
 
-        <div className="pt-10 text-[10px] text-slate-600 uppercase font-black tracking-widest mb-4 px-3">Administration</div>
+        <div className="pt-10 text-[10px] text-slate-400 uppercase font-black tracking-widest mb-4 px-3">Administration</div>
         <button
           onClick={() => setActiveTab('quick-links')}
           className={cn(
             "w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-semibold transition-all group",
             activeTab === 'quick-links' 
               ? "bg-corporate-accent text-slate-900 shadow-md shadow-yellow-500/10" 
-              : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+              : "text-slate-300 hover:text-white hover:bg-slate-800/50"
           )}
         >
-          <LinkIcon size={16} className={cn("transition-transform group-hover:scale-110", activeTab === 'quick-links' ? "text-slate-900" : "text-slate-500")} />
+          <LinkIcon size={16} className={cn("transition-transform group-hover:scale-110", activeTab === 'quick-links' ? "text-slate-900" : "text-slate-400")} />
           Quick Links
         </button>
-        <button className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800/50 group">
-          <Settings size={16} className="text-slate-500 group-hover:rotate-45 transition-transform" />
+        <button className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/50 group">
+          <Settings size={16} className="text-slate-400 group-hover:rotate-45 transition-transform" />
           Settings
         </button>
       </nav>
