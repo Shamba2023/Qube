@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type CloseType = 'MONTHLY' | 'QUARTERLY';
+export type CloseType = 'MONTHLY' | 'QUARTERLY' | 'STATUTORY';
 
 export type TaskStatus = 'TO_DO' | 'IN_PROGRESS' | 'COMPLETED' | 'BLOCKED';
 
@@ -14,7 +14,7 @@ export interface CloseTask {
   owner: string;
   status: TaskStatus;
   deadline: string;
-  category: 'ACCOUNTING' | 'TAX' | 'INTERCOMPANY' | 'REPORTING';
+  category: 'ACCOUNTING' | 'TAX' | 'INTERCOMPANY' | 'REPORTING' | 'TREASURY' | 'VALUATION';
 }
 
 export interface FinancialMetric {
@@ -32,4 +32,13 @@ export interface EntitySubmission {
   status: 'NOT_STARTED' | 'SUBMITTED' | 'APPROVED' | 'REJECTED';
   submittedAt?: string;
   approver?: string;
+}
+
+export interface StatutoryReport {
+  id: string;
+  entity: string;
+  reportName: string;
+  status: 'PENDING' | 'DRAFTING' | 'REVIEWED' | 'FILED';
+  deadline: string;
+  jurisdiction: string;
 }

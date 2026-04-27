@@ -51,7 +51,7 @@ export default function MetricCard({ metric, closeType }: MetricCardProps) {
             periodComp.percent > 0 ? "text-emerald-600" : periodComp.percent < 0 ? "text-corporate-red" : "text-slate-500"
           )}>
             {periodComp.percent > 0 ? <TrendingUp size={12} /> : periodComp.percent < 0 ? <TrendingDown size={12} /> : <Minus size={12} />}
-            <span>{Math.abs(periodComp.percent).toFixed(1)}%</span>
+            <span>{Math.abs(periodComp.percent).toFixed(0)}%</span>
           </div>
         </div>
 

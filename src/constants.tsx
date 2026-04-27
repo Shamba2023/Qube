@@ -46,6 +46,33 @@ export const MOCK_TASKS: CloseTask[] = [
     deadline: '2026-04-10',
     category: 'REPORTING',
   },
+  {
+    id: '6',
+    title: 'Quantum close runs',
+    description: 'Execute automated Quantum treasury close procedures.',
+    owner: 'David Chen',
+    status: 'TO_DO',
+    deadline: '2026-04-05',
+    category: 'TREASURY',
+  },
+  {
+    id: '7',
+    title: 'DIE runs',
+    description: 'Run the Data Integrity Engine validation suites.',
+    owner: 'Amelie Laurent',
+    status: 'TO_DO',
+    deadline: '2026-04-06',
+    category: 'VALUATION',
+  },
+  {
+    id: '8',
+    title: 'Interest runs',
+    description: 'Calculate and post monthly interest accrued and earned.',
+    owner: 'Robert Taylor',
+    status: 'TO_DO',
+    deadline: '2026-04-07',
+    category: 'TREASURY',
+  },
 ];
 
 export const MOCK_METRICS: FinancialMetric[] = [
@@ -84,4 +111,11 @@ export const MOCK_SUBMISSIONS: EntitySubmission[] = [
   { id: 'e2', name: 'Shell USA Inc.', region: 'Americas', status: 'SUBMITTED', submittedAt: '2026-04-06' },
   { id: 'e3', name: 'Shell Energy Asia', region: 'APAC', status: 'NOT_STARTED' },
   { id: 'e4', name: 'Shell Nigeria Explorer', region: 'MEA', status: 'REJECTED', submittedAt: '2026-04-04', approver: 'Regional Head' },
+];
+
+export const MOCK_STATUTORY_REPORTS: import('./types').StatutoryReport[] = [
+  { id: 'sr1', entity: 'Shell Global BV', reportName: 'Annual Financial Statement', status: 'FILED', deadline: '2026-06-30', jurisdiction: 'Netherlands' },
+  { id: 'sr2', entity: 'Shell USA Inc.', reportName: 'Form 10-K', status: 'REVIEWED', deadline: '2026-03-31', jurisdiction: 'USA' },
+  { id: 'sr3', entity: 'Shell Energy Asia', reportName: 'Statutory Audit Report', status: 'DRAFTING', deadline: '2026-05-15', jurisdiction: 'Singapore' },
+  { id: 'sr4', entity: 'Shell Nigeria Explorer', reportName: 'Local Content Report', status: 'PENDING', deadline: '2026-04-30', jurisdiction: 'Nigeria' },
 ];

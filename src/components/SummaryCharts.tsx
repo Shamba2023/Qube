@@ -9,7 +9,7 @@ const DATA = [
   { name: 'Jan', rev: 4000, margin: 22 },
   { name: 'Feb', rev: 4200, margin: 23 },
   { name: 'Mar', rev: 4100, margin: 21 },
-  { name: 'Apr', rev: 4500, margin: 24.5 },
+  { name: 'Apr', rev: 4500, margin: 25 },
 ];
 
 export default function SummaryCharts({ }: SummaryChartsProps) {
