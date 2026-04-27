@@ -1438,21 +1438,15 @@ export default function App() {
                   </thead>
                   <tbody className="divide-y divide-slate-50">
                     {[
-                      { name: "Alexandra Chen", completed: 24, notDue: 12, inProgress: 4, overdue: 0 },
-                      { name: "Michael Rodriguez", completed: 18, notDue: 15, inProgress: 8, overdue: 2 },
-                      { name: "Sarah Jenkins", completed: 31, notDue: 5, inProgress: 2, overdue: 0 },
-                      { name: "David Kim", completed: 12, notDue: 22, inProgress: 10, overdue: 5 },
-                      { name: "Emma Thompson", completed: 27, notDue: 8, inProgress: 3, overdue: 0 },
-                      { name: "James Wilson", completed: 20, notDue: 18, inProgress: 6, overdue: 1 },
-                      { name: "Priya Sharma", completed: 35, notDue: 2, inProgress: 1, overdue: 0 },
-                      { name: "Robert Taylor", completed: 15, notDue: 20, inProgress: 12, overdue: 3 },
-                      { name: "Lisa Wong", completed: 22, notDue: 14, inProgress: 5, overdue: 0 },
-                      { name: "Thomas Miller", completed: 19, notDue: 10, inProgress: 15, overdue: 4 },
-                      { name: "Elena Petrova", completed: 28, notDue: 7, inProgress: 4, overdue: 0 },
-                      { name: "Marcus Brown", completed: 21, notDue: 11, inProgress: 9, overdue: 2 },
-                      { name: "Sonia Gupta", completed: 33, notDue: 4, inProgress: 2, overdue: 0 },
-                      { name: "Kevin Lee", completed: 14, notDue: 25, inProgress: 11, overdue: 6 },
-                      { name: "Chloe Davis", completed: 26, notDue: 9, inProgress: 5, overdue: 1 }
+                      { name: "Rajiv Agarwal", completed: 24, notDue: 12, inProgress: 4, overdue: 0 },
+                      { name: "Apurva Prem", completed: 18, notDue: 15, inProgress: 8, overdue: 2 },
+                      { name: "Veena Sadasivam", completed: 31, notDue: 5, inProgress: 2, overdue: 0 },
+                      { name: "Dhananjay Boduri", completed: 12, notDue: 22, inProgress: 10, overdue: 5 },
+                      { name: "Karthikeyan Ganapathy", completed: 27, notDue: 8, inProgress: 3, overdue: 0 },
+                      { name: "Anandraj Thangaraj", completed: 20, notDue: 18, inProgress: 6, overdue: 1 },
+                      { name: "Samira Jamal", completed: 35, notDue: 2, inProgress: 1, overdue: 0 },
+                      { name: "Anusha B G", completed: 15, notDue: 20, inProgress: 12, overdue: 3 },
+                      { name: "Rakesh Athota", completed: 22, notDue: 14, inProgress: 5, overdue: 0 }
                     ].map((member) => (
                       <tr key={member.name} className="hover:bg-slate-50/50 transition-colors">
                         <td className="px-6 py-4">
