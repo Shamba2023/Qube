@@ -100,7 +100,7 @@ export default function Header({ closeType, setCloseType, title, activeTab, curr
           </div>
           <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-xs font-black rounded-lg hover:bg-slate-800 transition-all shadow-sm hover:shadow-md active:scale-95 uppercase tracking-wide">
             <Filter size={14} className="text-corporate-accent" />
-            <span>Audit Filters</span>
+            <span>ASSIGN TASKS</span>
           </button>
         </div>
       </div>
