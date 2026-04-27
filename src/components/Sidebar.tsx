@@ -26,7 +26,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   return (
     <aside className="w-64 bg-slate-900 text-slate-100 flex flex-col border-r border-slate-800">
       <div className="p-6 flex items-center gap-3">
-        <Box className="text-corporate-accent" size={32} strokeWidth={2.5} fill="#ED1C24" />
+        <Box className="text-corporate-accent" size={32} strokeWidth={2.5} fill="#8F7171" />
         <div className="flex flex-col">
           <span className="font-extrabold text-white text-xl tracking-tight leading-none">QUBE</span>
           <span className="text-[9px] text-slate-500 uppercase tracking-[0.2em] mt-1 font-bold">Shell Finance V1.0</span>
