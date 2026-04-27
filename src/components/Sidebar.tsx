@@ -7,17 +7,20 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
-  const tabs = [
+  const managementTabs = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'workflow', label: 'Period End Workflows', icon: CheckSquare },
     { id: 'group-submission', label: 'GR Status', icon: Layers },
-    { id: 'group-reporting-workflow', label: 'GR Workflows', icon: Workflow },
     { id: 'management-info', label: 'Management Information', icon: BarChart3 },
-    { id: 'reporting-risks', label: 'Controls & Compliance', icon: ClipboardCheck },
     { id: 'reporting', label: 'Statutory Reporting', icon: FileText },
-    { id: 'settlements', label: 'Settlements & Payments', icon: Banknote },
     { id: 'finance-playground', label: 'Finance Playground', icon: Sparkles },
     { id: 'team', label: 'Team & Oversight', icon: Users },
+  ];
+
+  const workflowTabs = [
+    { id: 'workflow', label: 'Period End Workflows', icon: CheckSquare },
+    { id: 'group-reporting-workflow', label: 'GR Workflows', icon: Workflow },
+    { id: 'reporting-risks', label: 'Controls & Compliance', icon: ClipboardCheck },
+    { id: 'settlements', label: 'Settlements & Payments', icon: Banknote },
   ];
 
   return (
@@ -32,7 +35,27 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
 
       <nav className="flex-1 px-3 py-6 space-y-1 overflow-y-auto">
         <div className="text-[10px] text-slate-600 uppercase font-black tracking-widest mb-4 px-3">Management Steps</div>
-        {tabs.map((tab) => {
+        {managementTabs.map((tab) => {
+          const Icon = tab.icon;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={cn(
+                "w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm font-semibold transition-all group",
+                activeTab === tab.id 
+                  ? "bg-corporate-accent text-slate-900 shadow-md shadow-yellow-500/10" 
+                  : "text-slate-400 hover:text-white hover:bg-slate-800/50"
+              )}
+            >
+              <Icon size={16} className={cn("transition-transform group-hover:scale-110", activeTab === tab.id ? "text-slate-900" : "text-slate-500")} />
+              {tab.label}
+            </button>
+          );
+        })}
+
+        <div className="pt-10 text-[10px] text-slate-600 uppercase font-black tracking-widest mb-4 px-3">Workflows</div>
+        {workflowTabs.map((tab) => {
           const Icon = tab.icon;
           return (
             <button
