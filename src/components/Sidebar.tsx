@@ -1,4 +1,4 @@
-import { LayoutDashboard, CheckSquare, Layers, FileText, Settings, Users, LogOut, Shield, ClipboardCheck, BarChart3, Workflow, Sparkles, Link as LinkIcon, Banknote, Box } from 'lucide-react';
+import { LayoutDashboard, CheckSquare, Layers, FileText, Settings, Users, LogOut, Shield, ClipboardCheck, BarChart3, Workflow, Sparkles, Link as LinkIcon, Banknote, Box, UserCheck } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 interface SidebarProps {
@@ -19,6 +19,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
   const workflowTabs = [
     { id: 'workflow', label: 'Period End Workflows', icon: CheckSquare },
     { id: 'group-reporting-workflow', label: 'GR Workflows', icon: Workflow },
+    { id: 'kyc-ler', label: 'KYC & LER', icon: UserCheck },
     { id: 'reporting-risks', label: 'Controls & Compliance', icon: ClipboardCheck },
     { id: 'risk', label: 'Risk Management', icon: Shield },
     { id: 'settlements', label: 'Settlements & Payments', icon: Banknote },

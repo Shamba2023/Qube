@@ -437,6 +437,166 @@ export default function App() {
             </div>
           </motion.div>
         );
+      case 'kyc-ler':
+        return (
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-corporate-navy tracking-tight">Compliance & Rationalization</h2>
+              <p className="text-sm text-slate-500 mt-1">Strategic oversight for Know Your Company and Legal Entity Rationalization programs.</p>
+            </div>
+            
+            <FiltersBar />
+
+            <div className="mt-8 space-y-12">
+              {/* Section 1: Know Your Company (KYC) */}
+              <section>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1.5 bg-amber-400 h-8 rounded-full" />
+                  <div>
+                    <h3 className="text-xl font-black text-corporate-navy uppercase tracking-tighter">Know Your Company (KYC)</h3>
+                    <p className="text-[11px] text-slate-400 font-bold uppercase">Customer & Counterparty Integrity</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="md:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 className="text-xs font-black text-slate-400 uppercase mb-4 tracking-widest">Verification Status by Entity</h4>
+                    <div className="space-y-4">
+                      {[
+                        { entity: 'Shell Energy Asia Pacific', status: 'Verified', deadline: '2026-12-31', progress: 100, risk: 'Low' },
+                        { entity: 'Shell Treasury Centre B.V.', status: 'Reviewing', deadline: '2026-06-15', progress: 60, risk: 'Medium' },
+                        { entity: 'Digital Global Solutions Ltd', status: 'Expiring', deadline: '2026-05-20', progress: 85, risk: 'High' },
+                        { entity: 'S-Energy Trading Hamburg', status: 'Pending', deadline: '2026-08-10', progress: 15, risk: 'Low' }
+                      ].map((item) => (
+                        <div key={item.entity} className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all">
+                          <div className="flex justify-between items-start mb-3">
+                            <div className="flex items-center gap-3">
+                              <div className={cn(
+                                "w-2 h-2 rounded-full animate-pulse",
+                                item.risk === 'Low' ? "bg-emerald-500" : item.risk === 'Medium' ? "bg-amber-500" : "bg-rose-500"
+                              )} />
+                              <div>
+                                <p className="text-[11px] font-black text-slate-900">{item.entity}</p>
+                                <p className="text-[10px] text-slate-500 font-medium">Validation: {item.deadline}</p>
+                              </div>
+                            </div>
+                            <span className={cn(
+                              "text-[9px] font-black px-2 py-0.5 rounded border uppercase tracking-tighter",
+                              item.status === 'Verified' ? "bg-emerald-50 text-emerald-600 border-emerald-100" :
+                              item.status === 'Reviewing' ? "bg-blue-50 text-blue-600 border-blue-100" :
+                              item.status === 'Expiring' ? "bg-rose-50 text-rose-600 border-rose-100" :
+                              "bg-amber-50 text-amber-600 border-amber-100"
+                            )}>
+                              {item.status}
+                            </span>
+                          </div>
+                          <div className="w-full bg-slate-200 h-1 rounded-full overflow-hidden">
+                            <div 
+                              className={cn(
+                                "h-full rounded-full transition-all duration-1000",
+                                item.progress === 100 ? "bg-emerald-500" : "bg-corporate-navy"
+                              )}
+                              style={{ width: `${item.progress}%` }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="bg-amber-50 p-6 rounded-2xl border border-amber-100">
+                      <h4 className="text-xs font-black text-amber-900 uppercase mb-4">KYC Alert Center</h4>
+                      <div className="space-y-3">
+                        <div className="bg-white/80 p-3 rounded-lg text-[11px] text-amber-800 border border-amber-200 font-bold">
+                          ⚠️ 4 Entities require immediate documentation updates before May 20th.
+                        </div>
+                        <div className="bg-white/80 p-3 rounded-lg text-[11px] text-amber-800 border border-amber-200 font-bold">
+                          📋 SAR regulatory update manual draft ready for review.
+                        </div>
+                      </div>
+                    </div>
+                    <button className="w-full py-4 bg-corporate-navy text-white rounded-xl text-[11px] font-black uppercase tracking-[0.2em] hover:bg-slate-800 transition-all shadow-lg shadow-blue-900/10 active:scale-95">
+                      Initiate New Review
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              {/* Section 2: Legal Entity Rationalization */}
+              <section className="pt-8 border-t border-slate-100">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1.5 bg-blue-500 h-8 rounded-full" />
+                  <div>
+                    <h3 className="text-xl font-black text-corporate-navy uppercase tracking-tighter">Legal Entity Rationalization</h3>
+                    <p className="text-[11px] text-slate-400 font-bold uppercase">Corporate Structure Optimization</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-1 space-y-6">
+                    <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                      <h4 className="text-xs font-black text-slate-400 uppercase mb-6 tracking-widest text-center">Entity Reduction Goal</h4>
+                      <div className="relative w-32 h-32 mx-auto mb-6">
+                        <svg className="w-full h-full transform -rotate-90">
+                          <circle cx="64" cy="64" r="58" stroke="currentColor" strokeWidth="8" fill="transparent" className="text-slate-100" />
+                          <circle cx="64" cy="64" r="58" stroke="currentColor" strokeWidth="8" fill="transparent" strokeDasharray={364.4} strokeDashoffset={364.4 * 0.22} className="text-blue-500" />
+                        </svg>
+                        <div className="absolute inset-0 flex flex-col items-center justify-center">
+                          <span className="text-2xl font-black text-slate-900 leading-none">78%</span>
+                          <span className="text-[8px] font-black text-slate-400 uppercase">Target</span>
+                        </div>
+                      </div>
+                      <p className="text-[11px] text-slate-500 text-center leading-relaxed">
+                        Achieved reduction of <span className="font-bold text-blue-600">42 dormant entities</span> in FY25. On track to reach goal of 180 total entities by Q4.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 className="text-xs font-black text-slate-400 uppercase mb-4 tracking-widest">Rationalization Workflow Status</h4>
+                    <div className="space-y-4">
+                      {[
+                        { step: 'Dormant Entity Analysis', status: 'Completed', owner: 'M. CHEN', date: 'Mar 12' },
+                        { step: 'Legal Structure Re-mapping', status: 'In Progress', owner: 'S. KNIGHT', date: 'Apr 25' },
+                        { step: 'Intercompany Balance Clearance', status: 'Pending', owner: 'T. WOODS', date: 'Jun 15' },
+                        { step: 'Final Liquidator Filing', status: 'Locked', owner: 'E. KUNKELS', date: '-' }
+                      ].map((step, idx) => (
+                        <div key={idx} className="flex items-center justify-between p-4 rounded-xl border border-slate-50 hover:bg-slate-50 transition-all group">
+                          <div className="flex items-center gap-4">
+                            <div className={cn(
+                              "w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black transition-all",
+                              step.status === 'Completed' ? "bg-emerald-100 text-emerald-700" :
+                              step.status === 'In Progress' ? "bg-blue-100 text-blue-700 animate-pulse" :
+                              "bg-slate-100 text-slate-400"
+                            )}>
+                              {idx + 1}
+                            </div>
+                            <div>
+                              <p className="text-[11px] font-bold text-slate-800">{step.step}</p>
+                              <div className="flex items-center gap-2 mt-0.5">
+                                <span className="text-[9px] text-corporate-navy font-black uppercase opacity-60">{step.owner}</span>
+                                <span className="text-[14px] text-slate-300 leading-none">•</span>
+                                <span className="text-[9px] text-slate-400 font-bold uppercase">{step.date}</span>
+                              </div>
+                            </div>
+                          </div>
+                          <span className={cn(
+                            "text-[9px] font-black px-2.5 py-1 rounded-full border uppercase tracking-tighter transition-all group-hover:scale-105",
+                            step.status === 'Completed' ? "bg-emerald-50 text-emerald-600 border-emerald-100" :
+                            step.status === 'In Progress' ? "bg-blue-50 text-blue-600 border-blue-100" :
+                            "bg-slate-50 text-slate-400 border-slate-200"
+                          )}>
+                            {step.status}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </motion.div>
+        );
       case 'management-info':
         return (
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
@@ -1506,6 +1666,7 @@ export default function App() {
       case 'workflow': return 'Period End Workflows';
       case 'group-submission': return 'GR Status';
       case 'group-reporting-workflow': return 'GR Workflows';
+      case 'kyc-ler': return 'KYC & LER Compliance';
       case 'management-info': return 'Management Information';
       case 'reporting-risks': return 'Controls & Compliance';
       case 'reporting': return 'Statutory Reporting Engine';
