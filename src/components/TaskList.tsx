@@ -39,10 +39,11 @@ export default function TaskList({ tasks }: TaskListProps) {
         <table className="w-full text-left table-fixed min-w-[800px]">
           <thead>
             <tr className="border-b border-slate-100">
-              <th className="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest w-[40%]">Metric / Task</th>
+              <th className="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest w-[30%]">Metric / Task</th>
               <th className="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center w-[15%]">Status</th>
               <th className="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest w-[15%]">Category</th>
-              <th className="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest w-[20%]">Assignee</th>
+              <th className="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest w-[15%]">Assignee</th>
+              <th className="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest w-[15%]">Action</th>
               <th className="px-6 py-3 text-[10px] font-black text-slate-400 uppercase tracking-widest w-[10%] text-right"></th>
             </tr>
           </thead>
@@ -78,6 +79,19 @@ export default function TaskList({ tasks }: TaskListProps) {
                     </div>
                     <span className="text-[11px] font-bold text-slate-600 truncate">{task.owner}</span>
                   </div>
+                </td>
+                <td className="px-6 py-4">
+                  <button className={cn(
+                    "text-[9px] font-black px-2 py-1 rounded border uppercase tracking-widest transition-all active:scale-95",
+                    task.status === 'COMPLETED' ? "bg-slate-100 text-slate-500 border-slate-200" :
+                    task.status === 'IN_PROGRESS' ? "bg-corporate-navy text-white border-corporate-navy" :
+                    task.status === 'BLOCKED' ? "bg-rose-600 text-white border-rose-600" :
+                    "bg-white text-slate-600 border-slate-200"
+                  )}>
+                    {task.status === 'COMPLETED' ? 'Re-open' : 
+                     task.status === 'IN_PROGRESS' ? 'Submit' : 
+                     task.status === 'BLOCKED' ? 'Escalate' : 'Start'}
+                  </button>
                 </td>
                 <td className="px-6 py-4 text-right">
                   <button className="p-1 px-2 text-[10px] font-black text-slate-400 hover:text-slate-900 border border-transparent hover:border-slate-200 hover:bg-white rounded transition-all">

@@ -76,7 +76,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
             FC
           </div>
           <div className="flex-1 overflow-hidden">
-            <div className="text-xs font-bold text-white truncate">Sarah Jenkins</div>
+            <div className="text-xs font-bold text-white truncate">Edwin Kunkels</div>
             <div className="text-[10px] text-slate-500 truncate">Group Controller</div>
           </div>
           <button className="text-slate-500 hover:text-white transition-colors">
