@@ -19,7 +19,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   AlertCircle, Download, FileSpreadsheet, Shield, ChevronDown, Calendar, 
   Sparkles, Bot, Send, Terminal, Cpu, Layers, Link as LinkIcon, 
-  ExternalLink, MessageSquare, CheckSquare, Share2, BarChart3, Banknote, Coins, ReceiptText, CreditCard 
+  ExternalLink, MessageSquare, CheckSquare, Share2, BarChart3, Banknote, Coins, ReceiptText, CreditCard, ArrowRight 
 } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, LabelList } from 'recharts';
 
@@ -580,14 +580,19 @@ export default function App() {
                               </div>
                             </div>
                           </div>
-                          <span className={cn(
-                            "text-[9px] font-black px-2.5 py-1 rounded-full border uppercase tracking-tighter transition-all group-hover:scale-105",
-                            step.status === 'Completed' ? "bg-emerald-50 text-emerald-600 border-emerald-100" :
-                            step.status === 'In Progress' ? "bg-blue-50 text-blue-600 border-blue-100" :
-                            "bg-slate-50 text-slate-400 border-slate-200"
-                          )}>
-                            {step.status}
-                          </span>
+                          <div className="flex items-center gap-3">
+                            <span className={cn(
+                              "text-[9px] font-black px-2.5 py-1 rounded-full border uppercase tracking-tighter transition-all group-hover:scale-105",
+                              step.status === 'Completed' ? "bg-emerald-50 text-emerald-600 border-emerald-100" :
+                              step.status === 'In Progress' ? "bg-blue-50 text-blue-600 border-blue-100" :
+                              "bg-slate-50 text-slate-400 border-slate-200"
+                            )}>
+                              {step.status}
+                            </span>
+                            <button className="p-1.5 rounded-lg bg-slate-100 text-slate-400 hover:bg-corporate-navy hover:text-white transition-all opacity-0 group-hover:opacity-100">
+                              <ArrowRight size={10} />
+                            </button>
+                          </div>
                         </div>
                       ))}
                     </div>
