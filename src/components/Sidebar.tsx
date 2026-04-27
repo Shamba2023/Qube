@@ -20,6 +20,7 @@ export default function Sidebar({ activeTab, setActiveTab }: SidebarProps) {
     { id: 'workflow', label: 'Period End Workflows', icon: CheckSquare },
     { id: 'group-reporting-workflow', label: 'GR Workflows', icon: Workflow },
     { id: 'reporting-risks', label: 'Controls & Compliance', icon: ClipboardCheck },
+    { id: 'risk', label: 'Risk Management', icon: Shield },
     { id: 'settlements', label: 'Settlements & Payments', icon: Banknote },
   ];
 

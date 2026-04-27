@@ -965,7 +965,7 @@ export default function App() {
 
             <div className="border-t border-slate-100 pt-6">
               <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Exposure Categories</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-blue-500">
                   <h4 className="text-xs font-bold text-slate-400 uppercase mb-2">Fx Risk</h4>
                   <p className="text-lg font-bold text-slate-900">Moderate Exposure</p>
@@ -983,6 +983,16 @@ export default function App() {
                     <span className="text-[10px] bg-orange-50 text-orange-700 px-2 py-0.5 rounded font-black uppercase w-fit">Fixed rate debt: 82%</span>
                     <p className="text-[11px] text-slate-500 leading-relaxed">
                       Weighted Average Cost of Debt (WACD) stable at 3.4%. Stress testing shows minimal EBITDA impact from +50bps shift in yield curves.
+                    </p>
+                  </div>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-rose-500">
+                  <h4 className="text-xs font-bold text-slate-400 uppercase mb-2">Credit Risk</h4>
+                  <p className="text-lg font-bold text-slate-900">High Monitoring</p>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <span className="text-[10px] bg-rose-50 text-rose-700 px-2 py-0.5 rounded font-black uppercase w-fit">DSO: 42 Days</span>
+                    <p className="text-[11px] text-slate-500 leading-relaxed">
+                      Monitoring counterparty limits for major trading partners. Provision for doubtful debts maintained at 1.5% of total receivables.
                     </p>
                   </div>
                 </div>
